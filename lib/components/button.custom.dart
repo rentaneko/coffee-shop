@@ -27,3 +27,40 @@ Widget mainButton(String label, BuildContext context, VoidCallback function) {
     ),
   );
 }
+
+Widget fullWidthButton(
+    String label, BuildContext context, VoidCallback function) {
+  return ElevatedButton(
+    onPressed: function,
+    style: ButtonStyle(
+      backgroundColor: MaterialStateProperty.resolveWith(
+        (states) {
+          if (states.contains(MaterialState.disabled)) {
+            return CoffeeColors.disable;
+          } else if (states.contains(MaterialState.pressed)) {
+            return CoffeeColors.inActive;
+          } else {
+            return CoffeeColors.brandColor;
+          }
+        },
+      ),
+      textStyle: MaterialStateProperty.resolveWith(
+        (states) {
+          if (states.contains(MaterialState.disabled)) {
+            return Theme.of(context)
+                .textTheme
+                .button!
+                .copyWith(color: CoffeeColors.light);
+          } else {
+            return Theme.of(context).textTheme.button;
+          }
+        },
+      ),
+      minimumSize: MaterialStateProperty.resolveWith(
+          (states) => Size(getWidthDevice(), 48)),
+      shape: MaterialStateProperty.resolveWith((states) =>
+          RoundedRectangleBorder(borderRadius: BorderRadius.circular(16))),
+    ),
+    child: Text(label),
+  );
+}

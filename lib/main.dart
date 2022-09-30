@@ -3,7 +3,6 @@ import 'package:get/route_manager.dart';
 import 'package:skincare_app/share/constants/value.constant.dart';
 import 'package:skincare_app/share/routes/pages.dart';
 import 'package:skincare_app/share/routes/routers.dart';
-import 'package:skincare_app/share/styles/coffee.color.dart';
 import 'package:skincare_app/share/styles/coffee.theme.dart';
 import 'package:supabase_flutter/supabase_flutter.dart';
 

@@ -18,6 +18,12 @@ class CoffeeTheme {
             fontFamily: 'RobotoMono',
             fontWeight: FontWeight.w400,
           ),
+          headline3: TextStyle(
+            fontSize: responsiveHeight(16),
+            color: CoffeeColors.info,
+            fontFamily: 'RobotoMono',
+            fontWeight: FontWeight.w400,
+          ),
           bodyText1: TextStyle(
             fontSize: responsiveHeight(20),
             color: CoffeeColors.paragraph,
@@ -31,7 +37,7 @@ class CoffeeTheme {
             fontSize: responsiveHeight(14),
           ),
         ),
-        textButtonTheme: TextButtonThemeData(),
+        textButtonTheme: const TextButtonThemeData(),
       );
 
   get darkTheme => ThemeData();

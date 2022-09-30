@@ -3,7 +3,7 @@ import 'package:skincare_app/share/styles/coffee.color.dart';
 import 'package:skincare_app/share/utils/utils.dart';
 
 class OnboardContent extends StatelessWidget {
-  OnboardContent({
+  const OnboardContent({
     Key? key,
     required this.image,
     required this.title,
@@ -61,24 +61,4 @@ class LineIndicator extends StatelessWidget {
       ),
     );
   }
-}
-
-class MySlideTopTransition extends PageRouteBuilder {
-  final Widget widget;
-  MySlideTopTransition({required this.widget})
-      : super(pageBuilder: (BuildContext context, Animation<double> animation,
-            Animation<double> secondaryAnimation) {
-          return widget;
-        }, transitionsBuilder: (BuildContext context,
-            Animation<double> animation,
-            Animation<double> secondaryAnimation,
-            Widget child) {
-          return SlideTransition(
-            position: Tween<Offset>(
-              begin: const Offset(0.0, -1.0),
-              end: Offset.zero,
-            ).animate(animation),
-            child: child,
-          );
-        });
 }
